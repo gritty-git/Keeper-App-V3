@@ -3,14 +3,14 @@ const app = express();
 const mongoose = require('mongoose');
 const routesUrls = require('./routes/routes')
 const cors = require('cors')
-const dotenv = require('dotenv');
+
 const path = require('path');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const passport = require("passport");
 const cookieParser = require('cookie-parser');
 
-dotenv.config()
+require('dotenv').config({path: '../.env'});
 
 
 mongoose.connect(process.env.DB_ACCESS, {
