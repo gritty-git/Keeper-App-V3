@@ -1,0 +1,28 @@
+{
+  "name": "keeper-app",
+  "version": "1.0.0",
+  "description": "Keeper Root App",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "concurrently": "^6.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.3",
+    "nodemon": "^2.0.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd Keeper-App-front && npm run build",
+    "install-client": "cd Keeper-App-front && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "server": "nodemon keeper-app-back/server",
+    "client": "npm start --prefix Keeper-App-front",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "M Soumya Prakash Sahoo",
+  "license": "ISC"
+}
